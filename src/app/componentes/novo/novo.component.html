@@ -1,0 +1,26 @@
+
+<h1 *ngIf="title; else mensagemPadrao">{{title}}</h1>
+
+<ng-template #mensagemPadrao>
+    <h1>Bem-vindo ao treinamento angular</h1>
+</ng-template>
+
+<button (click)="mudarTexto()">Mudar Texto</button>
+
+<img [src]="imgUrl" alt="">
+<button (click)="chamarFuncao()">Chamar função</button>
+
+<input [(ngModel)]="title">
+
+<span [ngSwitch]="titleSwitch">
+    <p *ngSwitchCase="true">
+        ess é um paragrafo verdadeiro
+    </p>
+    <p *ngSwitchCase="false">
+        ess é um paragrafo falso
+    </p>
+    <p *ngSwitchDefault>
+        ess é um paragrafo default
+    </p>
+
+</span>
