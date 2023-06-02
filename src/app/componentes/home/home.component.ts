@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { filter, map, of, tap } from 'rxjs';
+import { HomeService } from '../services/home.service';
 
 
 export interface Pessoa {
@@ -19,6 +21,23 @@ export interface Pessoas extends Array<Pessoa>{}
 
 
 export class HomeComponent {
+
+  // Pie do RXJS !== angular pipe
+  
+   //frutas: string[] = [];
+
+   //frutas$ = of('banana','morango','abacaxi','pera','melancia');
+   
+   constructor(private homeService: HomeService){
+  //this.frutas$.pipe(
+  //tap(console.log),
+  // map( fruta => fruta.toUpperCase()),
+  // tap(console.log),
+  // filter(fruta => fruta.startsWith('B') || fruta.startsWith('M'))
+  // ).subscribe( resultado => {
+  //  this.frutas.push(resultado);
+  //});
+   }
 
   clientes: Pessoas = [
     {
@@ -49,7 +68,11 @@ export class HomeComponent {
   dataSource !: MatTableDataSource<any>;
 
   ngOnInit(){
+   this.homeService.getClientes()
+   .subscribe(clientes => {
+    this.clientes=clientes;
     this.dataSource = new MatTableDataSource(this.clientes);
+   })
         
   } 
 

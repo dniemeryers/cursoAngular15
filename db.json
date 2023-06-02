@@ -10,7 +10,7 @@
     {
       "nome": "Mouse Gamer",
       "descricao": "Mouse gamer RGB 1200dpi",
-      "imagemUrl": "https://m.media-amazon.com/images/I/51H+ecG+GgL._AC_SX679_.jpg",
+      "imagemUrl": "https://m.media-amazon.com/images/I/51wwtqUfVUL._AC_SL1000_.jpg",
       "preco": "59",
       "estoque": 56
     },
@@ -33,30 +33,65 @@
 
 "clientes": [
   {
-    "nome": "Alexandre",
-    "sexo": "m",
-    "idade": 20,
-    "salario": "10000"
+    "nome": "Maria Santos",
+    "sexo": "f",
+    "idade": 29,
+    "salario": 4000
   },
   {
-    "nome": "Roberto",
+    "nome": "João Silva",
     "sexo": "m",
+    "idade": 42,
+    "salario": 7000
+  },
+  {
+    "nome": "Ana Costa",
+    "sexo": "f",
+    "idade": 31,
+    "salario": 5500
+  },
+  {
+    "nome": "José Oliveira",
+    "sexo": "m",
+    "idade": 26,
+    "salario": 3500
+  },
+  {
+    "nome": "Paula Alves",
+    "sexo": "f",
+    "idade": 35,
+    "salario": 6000
+  },
+  {
+    "nome": "Carlos Rodrigues",
+    "sexo": "m",
+    "idade": 38,
+    "salario": 8000
+  },
+  {
+    "nome": "Beatriz Santos",
+    "sexo": "f",
+    "idade": 27,
+    "salario": 4500
+  },
+  {
+    "nome": "Rafaela Souza",
+    "sexo": "f",
     "idade": 33,
-    "salario": "11000"
+    "salario": 7000
   },
   {
-    "nome": "Maura",
-    "sexo": "f",
-    "idade": 23,
-    "salario": "12000"
+    "nome": "Lucas Almeida",
+    "sexo": "m",
+    "idade": 29,
+    "salario": 4200
   },
   {
-    "nome": "Claudia",
-    "sexo": "f",
-    "idade": 22,
-    "salario": "13000"
+    "nome": "André Costa",
+    "sexo": "m",
+    "idade": 41,
+    "salario": 9000
   }
-
 ]
 
 }

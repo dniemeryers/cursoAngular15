@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
+import { Produto, Produtos } from '../models/produto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem',
@@ -8,7 +10,8 @@ import { ProdutoService } from '../services/produto.service';
 })
 export class ListagemComponent implements OnInit {
 
-  constructor(private produtoService: ProdutoService){
+  constructor(private produtoService: ProdutoService,
+    private router: Router){
 
   }
 
@@ -18,10 +21,20 @@ export class ListagemComponent implements OnInit {
   // Angular usa RXJS e o RXJS não usa promisse
   // Angular usa Observable === Cano
 
+  produtos!: Produtos;
+
   ngOnInit(): void {
-      this.produtoService.getCidadePeloCep().subscribe( resposta => {
-      console.log(resposta)
-    });
+      this.produtoService.getProdutos()
+      .subscribe(produtos => {
+        this.produtos = produtos;
+        console.log(this.produtos)
+      });
+
+      
+  }
+
+  selecionarProduto(produto: Produto){
+    this.router.navigate(['produto','editar-produto', produto.id]);
   }
 
   // getDoJavaScript(){
