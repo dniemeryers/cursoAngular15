@@ -25,7 +25,7 @@ this.id = this.activatedRoute.snapshot.url[1].path;
 
 this.produtoService.getProdutoPeloId(this.id).subscribe((produto: Produto) =>{
   this.produto = produto;
-})
+});
 
 }
 }

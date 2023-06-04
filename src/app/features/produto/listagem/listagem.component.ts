@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
 import { Produto, Produtos } from '../models/produto.model';
-import { Router } from '@angular/router';
+import { Router,  } from '@angular/router';
 
 @Component({
   selector: 'app-listagem',
@@ -28,13 +28,12 @@ export class ListagemComponent implements OnInit {
       .subscribe(produtos => {
         this.produtos = produtos;
         console.log(this.produtos)
-      });
-
-      
+      });      
   }
 
   selecionarProduto(produto: Produto){
-    this.router.navigate(['produto','editar-produto', produto.id]);
+    console.log(produto)
+    this.router.navigate(['produto','editar-produto', produto.id]);    
   }
 
   // getDoJavaScript(){

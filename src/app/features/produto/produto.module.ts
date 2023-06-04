@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     ProdutoRoutingModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ]
 })
 export class ProdutoModule { }
