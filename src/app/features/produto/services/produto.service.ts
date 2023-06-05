@@ -18,10 +18,21 @@ export class ProdutoService {
 
   // recuperar lista de produtos
   getProdutos(): Observable<Produtos>{
-    return this.http.get<Produtos>(`${this.baseUrl}produtos`)
+    return this.http.get<Produtos>(`${this.baseUrl}produtos`);
   }
 
   getProdutoPeloId(id: string): Observable<Produto>{
-    return this.http.get<Produto>(`${this.baseUrl}produtos/${id}`)
+    return this.http.get<Produto>(`${this.baseUrl}produtos/${id}`);
   }
-}
+
+  atualizarProduto(produto:Produto): Observable<any>{
+    return this.http.put(`${this.baseUrl}produtos/${produto.id}`,produto);
+  }
+
+  criarProduto(produto: Produto): Observable<any> {
+    return this.http.post(`${this.baseUrl}produtos`,produto);
+  }
+  excluirProduto(id:string): Observable<any>{
+    return this.http.delete<Produtos>(`${this.baseUrl}produtos/${id}`);
+  }
+} 
