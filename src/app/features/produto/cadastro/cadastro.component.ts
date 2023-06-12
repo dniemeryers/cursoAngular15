@@ -3,6 +3,7 @@ import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../models/produto.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { createSenhaForte } from '../Validacoes/criarSenhaForte';
 
 @Component({
   selector: 'app-cadastro',
@@ -58,8 +59,10 @@ this.produtoService.getProdutoPeloId(this.id).subscribe((produto: Produto) =>{
 
 criarFormulario(){
   this.formCadastroProduto = this.formBuilder.group({
-    nome: ['', Validators.required, Validators.min(4)],
+    nome: ['', Validators.required],
     descricao: ['', Validators.required],
+    email: ['', [Validators.required, ,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+    password:['', [Validators.required, Validators.minLength(8), createSenhaForte()]],
     preco:['', Validators.required],
     estoque:[0, Validators.required]
   });

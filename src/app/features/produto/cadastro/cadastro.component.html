@@ -3,7 +3,7 @@
 <form class="example-form" [formGroup]="formCadastroProduto">
     <mat-form-field class="example-full-width">
       <mat-label>Titulo do Produto</mat-label>
-      <input matInput placeholder="Titulo do prodto" min="4" formControlName="nome" >
+      <input matInput placeholder="Titulo do prodto" formControlName="nome" >
       <mat-error>Favor Informe um Titulo</mat-error>
     </mat-form-field> 
     
@@ -11,6 +11,18 @@
       <mat-label>Preço</mat-label>
       <input matInput placeholder="Digite um Produto" formControlName="preco" >
       <mat-error>Favor Informe o preço</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Digite um password" formControlName="password" >
+      <mat-error>Favor Informe um email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Digite email válido" formControlName="email" >
+      <mat-error>Favor Informe uma senha</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -25,5 +37,5 @@
       <mat-error>Favor Informe a Descrição</mat-error>
     </mat-form-field>   
     
-    <button mat-raised-button color="primary" (click)="salvarProduto()"[disabled]="!formCadastroProduto.valid">Salvar</button>
+    <button mat-raised-button color="primary" (click)="salvarProduto()" [disabled]="!formCadastroProduto.valid">Salvar</button>
   </form>
